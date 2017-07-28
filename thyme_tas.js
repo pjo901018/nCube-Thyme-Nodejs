@@ -82,6 +82,9 @@ function tas_handler (data) {
             socket_arr[ctname] = this;
 
             console.log('----> got data for [' + ctname + '] from tas ---->');
+            console.log('con', jsonObj.con);
+            console.log('sh_state', sh_state);
+            console.log('conf.cnt', conf.cnt);
 
             if (jsonObj.con == 'hello') {
                 this.write(line + '<EOF>');
@@ -89,6 +92,7 @@ function tas_handler (data) {
             else {
                 if (sh_state == 'crtci') {
                     for (var j = 0; j < conf.cnt.length; j++) {
+                        console.log('conf.cnt[j].name', conf.cnt[j].name, 'ctname', ctname);
                         if (conf.cnt[j].name == ctname) {
                             //console.log(line);
                             sh_adn.crtci(j, content, this, function (status, res_body, to, socket) {

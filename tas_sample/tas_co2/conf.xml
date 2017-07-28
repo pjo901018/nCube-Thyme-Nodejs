@@ -7,7 +7,7 @@
         <parentport>3105</parentport>
     </tas>
     <upload>
-        <ctname>cnt-co2</ctname>
+        <ctname>cnt-ultrasonic</ctname>
         <id>fe80:0000:0000:0000:0212:4b00:0235:bce5</id>
     </upload>
     <upload>
